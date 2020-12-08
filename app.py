@@ -14,19 +14,17 @@ def hello_name(name):
 @app.route("/MVS")
 def main():
     returnString = ''
-    returnString = returnString + ("Welcome to your courses...")
-    course = Course("Design Patterns","CS330","A fun class for you to learn")
+    returnString = returnString + ("Welcome to your courses...\n")
+    course = Course("Design Patterns\n","CS330\n","A fun class for you to learn\n")
 
     courseView = CourseView()
     courseController = CourseController(course, courseView)
-    returnString = returnString + courseController.updateView()
+    returnString = returnString + str(courseController.updateView())
 
     courseController.setCourseDescription("It will teach you to do thing like this")
-    returnString = returnString + courseController.updateView()
-    return returnString
+    returnString = returnString + str(courseController.updateView())
 
-def updateView(self):
-    return str(self.model.getName()+ self.model.getNumber()+ self.model.getDescription())
+    return returnString
 
 if __name__ == "__main__":
     main()

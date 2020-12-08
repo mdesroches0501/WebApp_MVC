@@ -33,6 +33,6 @@ class CourseController():
         return self.model.getDescription()
 
     def updateView(self):
-        print(self.model.getName(), self.model.getNumber(), self.model.getDescription())
+        return str(self.model.getName()+ self.model.getNumber()+ self.model.getDescription())
 
 
